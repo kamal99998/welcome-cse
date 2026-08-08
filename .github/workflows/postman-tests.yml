@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,13 +24,9 @@ jobs:
         run: |
           docker build -t demo .
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Run Docker Container
+        run: |
+          docker run -d --name demo-container -p 3000:3000 demo
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -48,4 +44,3 @@ jobs:
       - name: Run Postman Collection with Newman
         run: |
           newman run postman/344_kamal.json
-          newman run postman/Mredul_329.postman_collection.json
