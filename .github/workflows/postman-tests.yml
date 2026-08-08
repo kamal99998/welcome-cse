@@ -20,13 +20,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build Client Docker Image
+      - name: Build Docker Image
         run: |
-          docker build -t demo-client ./client
-
-      - name: Build Server Docker Image
-        run: |
-          docker build -t demo-server ./server
+          docker build -t demo .
 
   test:
     needs: build
