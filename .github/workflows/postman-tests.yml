@@ -45,6 +45,6 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      - name: Run Postman tests
+      - name: Run Postman Collection with Newman
         run: |
           newman run postman/344_kamal.json
