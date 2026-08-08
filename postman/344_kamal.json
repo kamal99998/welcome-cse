@@ -1,0 +1,340 @@
+{
+  "info": {
+    "_postman_id": "9f4d8d52-5e71-4b8d-9c33-6f0a2e7c1a91",
+    "name": "Ganjoor API - 5 Requests x 10 Tests",
+    "description": "Five public Ganjoor GET endpoints. Each request contains exactly 10 Postman tests. The endpoints were selected from the current Ganjoor Swagger/OpenAPI documentation and do not depend on guessed numeric IDs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://api.ganjoor.net",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 - GET Published Poets",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/ganjoor/poets",
+        "description": "Public Ganjoor API endpoint documented in the current Swagger/OpenAPI documentation."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"1. Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"2. Response time is below 10000 ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(10000);",
+              "});",
+              "",
+              "pm.test(\"3. Response body is not empty\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"4. Content-Type header exists\", function () {",
+              "    pm.expect(pm.response.headers.has(\"Content-Type\")).to.eql(true);",
+              "});",
+              "",
+              "pm.test(\"5. Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "",
+              "pm.test(\"6. Response can be parsed as JSON\", function () {",
+              "    pm.expect(() => pm.response.json()).to.not.throw();",
+              "});",
+              "",
+              "pm.test(\"7. Response is an array\", function () {",
+              "    pm.expect(pm.response.json()).to.be.an(\"array\");",
+              "});",
+              "",
+              "pm.test(\"8. Array contains data\", function () {",
+              "    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"9. First item is an object\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(data[0]).to.be.an(\"object\");",
+              "});",
+              "",
+              "pm.test(\"10. Response is valid JSON data\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(data).to.not.equal(null);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - GET Centuries",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/ganjoor/centuries",
+        "description": "Public Ganjoor API endpoint documented in the current Swagger/OpenAPI documentation."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"1. Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"2. Response time is below 10000 ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(10000);",
+              "});",
+              "",
+              "pm.test(\"3. Response body is not empty\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"4. Content-Type header exists\", function () {",
+              "    pm.expect(pm.response.headers.has(\"Content-Type\")).to.eql(true);",
+              "});",
+              "",
+              "pm.test(\"5. Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "",
+              "pm.test(\"6. Response can be parsed as JSON\", function () {",
+              "    pm.expect(() => pm.response.json()).to.not.throw();",
+              "});",
+              "",
+              "pm.test(\"7. Response is an array\", function () {",
+              "    pm.expect(pm.response.json()).to.be.an(\"array\");",
+              "});",
+              "",
+              "pm.test(\"8. Array contains data\", function () {",
+              "    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"9. First item is an object\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(data[0]).to.be.an(\"object\");",
+              "});",
+              "",
+              "pm.test(\"10. Response is valid JSON data\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(data).to.not.equal(null);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - GET Books",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/ganjoor/books",
+        "description": "Public Ganjoor API endpoint documented in the current Swagger/OpenAPI documentation."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"1. Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"2. Response time is below 10000 ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(10000);",
+              "});",
+              "",
+              "pm.test(\"3. Response body is not empty\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"4. Content-Type header exists\", function () {",
+              "    pm.expect(pm.response.headers.has(\"Content-Type\")).to.eql(true);",
+              "});",
+              "",
+              "pm.test(\"5. Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "",
+              "pm.test(\"6. Response can be parsed as JSON\", function () {",
+              "    pm.expect(() => pm.response.json()).to.not.throw();",
+              "});",
+              "",
+              "pm.test(\"7. Response is an array\", function () {",
+              "    pm.expect(pm.response.json()).to.be.an(\"array\");",
+              "});",
+              "",
+              "pm.test(\"8. Array contains data\", function () {",
+              "    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"9. First item is an object\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(data[0]).to.be.an(\"object\");",
+              "});",
+              "",
+              "pm.test(\"10. Response is valid JSON data\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(data).to.not.equal(null);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 - GET Hafez Faal",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/ganjoor/hafez/faal",
+        "description": "Public Ganjoor API endpoint documented in the current Swagger/OpenAPI documentation."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"1. Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"2. Response time is below 10000 ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(10000);",
+              "});",
+              "",
+              "pm.test(\"3. Response body is not empty\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"4. Content-Type header exists\", function () {",
+              "    pm.expect(pm.response.headers.has(\"Content-Type\")).to.eql(true);",
+              "});",
+              "",
+              "pm.test(\"5. Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "",
+              "pm.test(\"6. Response can be parsed as JSON\", function () {",
+              "    pm.expect(() => pm.response.json()).to.not.throw();",
+              "});",
+              "",
+              "pm.test(\"7. Response is an object\", function () {",
+              "    pm.expect(pm.response.json()).to.be.an(\"object\");",
+              "});",
+              "",
+              "pm.test(\"8. Object contains data\", function () {",
+              "    pm.expect(Object.keys(pm.response.json()).length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"9. Response object is not null\", function () {",
+              "    pm.expect(pm.response.json()).to.not.equal(null);",
+              "});",
+              "",
+              "pm.test(\"10. Response has a usable JSON structure\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(Object.keys(data)).to.be.an(\"array\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 - GET Random Poem",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/ganjoor/poem/random",
+        "description": "Public Ganjoor API endpoint documented in the current Swagger/OpenAPI documentation."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"1. Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"2. Response time is below 10000 ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(10000);",
+              "});",
+              "",
+              "pm.test(\"3. Response body is not empty\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"4. Content-Type header exists\", function () {",
+              "    pm.expect(pm.response.headers.has(\"Content-Type\")).to.eql(true);",
+              "});",
+              "",
+              "pm.test(\"5. Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "",
+              "pm.test(\"6. Response can be parsed as JSON\", function () {",
+              "    pm.expect(() => pm.response.json()).to.not.throw();",
+              "});",
+              "",
+              "pm.test(\"7. Response is an object\", function () {",
+              "    pm.expect(pm.response.json()).to.be.an(\"object\");",
+              "});",
+              "",
+              "pm.test(\"8. Object contains data\", function () {",
+              "    pm.expect(Object.keys(pm.response.json()).length).to.be.greaterThan(0);",
+              "});",
+              "",
+              "pm.test(\"9. Response object is not null\", function () {",
+              "    pm.expect(pm.response.json()).to.not.equal(null);",
+              "});",
+              "",
+              "pm.test(\"10. Response has a usable JSON structure\", function () {",
+              "    const data = pm.response.json();",
+              "    pm.expect(Object.keys(data)).to.be.an(\"array\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
