@@ -10,13 +10,33 @@ on:
       - main
 
 jobs:
-  postman-tests:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build Client Docker Image
+        run: |
+          docker build -t demo-client ./client
+
+      - name: Build Server Docker Image
+        run: |
+          docker build -t demo-server ./server 
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
