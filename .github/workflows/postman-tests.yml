@@ -28,3 +28,4 @@ jobs:
       - name: Run Postman tests
         run: |
           newman run postman/344_kamal.json
+          Mredul_329_postman_collection.json
