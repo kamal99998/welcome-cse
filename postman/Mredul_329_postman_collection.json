@@ -1,9 +1,10 @@
 {
   "info": {
-    "_postman_id": "8793d87f-352e-4a2c-9526-85fc6341b4f0",
+    "_postman_id": "18035afd-6baa-4843-8b71-8a71ee382ee1",
     "name": "Mredul_329",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "57225813"
+    "_exporter_id": "57225813",
+    "_collection_link": "https://go.postman.co/collection/57225813-18035afd-6baa-4843-8b71-8a71ee382ee1?source=collection_link"
   },
   "item": [
     {
@@ -11,11 +12,23 @@
       "item": [
         {
           "name": "GET_1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "GET",
             "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
-              "raw": "https://jsonplaceholder.typicode.com/posts/100",
+              "raw": "https://jsonplaceholder.typicode.com/posts/10",
               "protocol": "https",
               "host": [
                 "jsonplaceholder",
@@ -24,7 +37,7 @@
               ],
               "path": [
                 "posts",
-                "100"
+                "10"
               ]
             }
           },
@@ -223,7 +236,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n\r\n    \"name\": \"abcd\"\r\n}\r\n   ",
+              "raw": "{\r\n    \r\n    \"id\": 6\r\n\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -313,7 +326,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n     \"id\": 2\r\n}",
+              "raw": "{\r\n     \"id\": 2357\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -697,100 +710,160 @@
         },
         {
           "name": "POST_6",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"userId\": 1,\r\n  \"title\": \"delectus aut autem\",\r\n  \"completed\": false,\r\n  \"id\": 201\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "POST_7",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"userId\": 1,\r\n  \"title\": \"delectus aut autem\",\r\n  \"completed\": false\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "POST_8",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"userId\": 1,\r\n  \"title\": \"delectus aut autem\",\r\n  \"completed\": false\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "POST_9",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"userId\": 1,\r\n  \"title\": \"delectus aut autem\",\r\n  \"completed\": false\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "POST_10",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"userId\": 1,\r\n  \"title\": \"delectus aut autem\",\r\n  \"completed\": false\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
             }
           },
           "response": []
@@ -1232,32 +1305,55 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Updated Post\",\r\n  \"body\": \"This post has been updated.\",\r\n  \"userId\": 115\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/8",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "8"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "PUT_6",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Updated Post\",\r\n  \"body\": \"This post has been updated.\",\r\n  \"userId\": 115\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/9",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "9"
+              ]
             }
           },
           "response": []
@@ -1269,72 +1365,115 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Updated Post\",\r\n  \"body\": \"This post has been updated.\",\r\n  \"userId\": 115\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/8",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "8"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "PUT_8",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Updated Post\",\r\n  \"body\": \"This post has been updated.\",\r\n  \"userId\": 115\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/8",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "8"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "PUT_9",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Updated Post\",\r\n  \"body\": \"This post has been updated.\",\r\n  \"userId\": 115\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/8",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "8"
+              ]
             }
           },
           "response": []
         },
         {
           "name": "PUT_10",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
-            "method": "GET",
+            "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "",
+              "raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Updated Post\",\r\n  \"body\": \"This post has been updated.\",\r\n  \"userId\": 115\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/8",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "8"
+              ]
             }
           },
           "response": []
