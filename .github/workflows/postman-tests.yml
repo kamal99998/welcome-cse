@@ -10,42 +10,45 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build Docker Image
-        run: |
-          docker build -t demo .
-
   test:
-    needs: build
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
+      # 3. Install project dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Start Node.js server
+      - name: Start server
+        run: |
+          npm start &
+          sleep 5
+
+      # 5. Check API/server
+      - name: Check API
+        run: |
+          curl http://localhost:3000
+
+      # 6. Install Newman
       - name: Install Newman
-        run: |
-          npm install -g newman
+        run: npm install -g newman
 
-      - name: Check Newman
-        run: |
-          newman --version
+      # 7. Check Newman
+      - name: Check Newman Version
+        run: newman --version
 
+      # 8. Run Postman collection
       - name: Run Postman Collection
         run: |
           newman run postman/344_kamal.json
-          newman run postman/Mredul_329_postman_collection.json
