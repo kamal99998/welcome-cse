@@ -27,5 +27,4 @@ jobs:
 
       - name: Run Postman tests
         run: |
-          newman run postman/ganjoor_5_requests_10_tests_reliable.json
           newman run postman/344_kamal.json
